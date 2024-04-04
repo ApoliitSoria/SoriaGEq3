@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="random"></p>
+    <p id="index"></p>
+    <p id="d"></p>
+   
+    <script>
+        function generateRandomNumber() {
+            return Math.floor(Math.random() * 1001);
+        }
+
+        var random = generateRandomNumber();
+        document.getElementById("random").innerHTML = "<h1> Random number generated: " + random + "</h1>";
+       
+        if (random < 1000 && random > 99) {
+            var index1 = Math.floor(random / 100) * 100; 
+            var index2 = Math.floor((random % 100) / 10) * 10; 
+            var index3 = random % 10; 
+
+            document.getElementById("index").innerHTML = "<h1> Breakdown: <h2>" + index1 + " " + index2 + " " + index3 ;
+
+            var d = new Date();
+            document.getElementById("d").innerHTML = d;
+        }
+        else if (random < 100 && random > 9) {
+            var index1 = Math.floor(random / 10) * 10; 
+            var index2 = random % 10; 
+
+            document.getElementById("index").innerHTML = "<h1> Breakdown: <h2>" + index1 + " " + index2;
+
+            var d = new Date();
+            document.getElementById("d").innerHTML = d;
+        }
+        else {
+            document.getElementById("index").innerHTML = "<h1> Breakdown: <h2>" + random;
+            var d = new Date();
+            document.getElementById("d").innerHTML = d;
+        }
+    </script>
+</body>
+</html>
